@@ -3,12 +3,15 @@ import BarMenu from "../../MenuBar";
 import HeaderCadsatro from "../HeaderCadastro";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import TextField from "@mui/material/TextField";
+import Autocomplete from "@mui/material/Autocomplete";
+import * as React from "react";
 
-export default function CadastroFornecedor() {
+export default function CadastroUsuario() {
   return (
     <GradientWrapper>
-      <HeaderCadsatro label="FORNECEDOR" />
-      <div className="flex justify-center items-center mt-14">
+      <HeaderCadsatro label="USUÁRIO" />
+      <div className="flex justify-center items-center mt-14  ">
         <form action="" className="space-y-6 w-96">
           <div className="grid w-full max-w-sm items-center gap-1.5">
             <Label htmlFor="nome" className="text-white font-bold">
@@ -17,25 +20,30 @@ export default function CadastroFornecedor() {
             <Input
               type="text"
               id="nome_fornecedor"
-              placeholder="Escreva o nome do fornecedor"
+              placeholder="Escreva o nome do usuário"
             />
           </div>
           <div className="grid w-full max-w-sm items-center gap-1.5">
             <Label htmlFor="nome" className="text-white font-bold">
-              CIDADE:
+              COMISSÃO:
             </Label>
             <Input
               type="text"
               id="cidade"
-              placeholder="Escreva o nome da sua cidade aqui"
+              placeholder="Escreva o valor da comissão"
             />
           </div>
-          <div className="grid w-full max-w-sm items-center gap-1.5">
-            <Label htmlFor="nome" className="text-white font-bold">
-              CNPJ:
+          <Label htmlFor="nome" className="text-white font-bold">
+              EMPRESA:
             </Label>
-            <Input type="text" id="cnpj" placeholder="Escreva o CNPJ aqui" />
-          </div>
+          <Autocomplete
+            className="bg-white rounded-lg"
+            disablePortal
+            id="combo-box-demo"
+            options={empresasCadastradas}
+            sx={{ width: 384 }}
+            renderInput={(params) => <TextField {...params}  />}
+          />
           <div className="flex justify-center">
             <button className="text-white bg-black font-bold w-[200px] h-[40px] rounded-xl">
               Cadastrar
@@ -47,3 +55,7 @@ export default function CadastroFornecedor() {
     </GradientWrapper>
   );
 }
+
+const empresasCadastradas = [
+    { label: 'Distribuidora XYZ', year: 2022 },
+];

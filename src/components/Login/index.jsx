@@ -17,10 +17,6 @@ export default function Login() {
         <button className="text-white bg-second-color rounded-3xl font-bold w-[110px] p-2 ml-[3.8rem]">
           Entrar
         </button>
-        <label className="text-white mt-28">
-          Desenvolved By - Carlos Henrique - Felipe Rocha - Felipe Gomes -
-          Fabiano Franco - Fábio Landin - Guilherme Aparecido - Luis Fernando
-        </label>
       </div>
     </GradientWrapper>
   );
