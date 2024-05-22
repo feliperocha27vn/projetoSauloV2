@@ -4,44 +4,43 @@ import HeaderCadsatro from "../HeaderCadastro";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Autocomplete from "@mui/material/Autocomplete";
-import * as React from "react";
 
 const options = ["Option 1", "Option 2"];
 
-export default function CadastroUsuario() {
+export default function CadastroProduto() {
   return (
     <GradientWrapper>
-      <HeaderCadsatro label="USUÁRIO" />
-      <div className="flex justify-center items-center mt-14  ">
-        {/* Formulario */}
+      <HeaderCadsatro label="PRODUTO" />
+      <div className="flex justify-center items-center mt-14">
         <form action="" className="flex flex-col gap-4 w-96">
+          {/* descrição do produto */}
           <div className="grid w-full max-w-sm items-center gap-1.5">
             <Label htmlFor="nome" className="text-white font-bold">
-              NOME:
+              DESCRIÇÃO:
             </Label>
             <Input
               type="text"
-              id="nome_fornecedor"
-              placeholder="Escreva o nome do usuário"
+              id="descricao_produto"
+              placeholder="Escreva a descrição do produto"
             />
           </div>
-          {/* Valor da comissao */}
+          {/* quantidade */}
           <div className="grid w-full max-w-sm items-center gap-1.5">
             <Label htmlFor="nome" className="text-white font-bold">
-              COMISSÃO:
+              QUANTIDADE:
             </Label>
             <Input
               type="text"
-              id="cidade"
-              placeholder="Escreva o valor da comissão"
+              id="quantidade"
+              placeholder="Escreva a quantidade do produto"
             />
           </div>
-          {/* Autocomplete da empresa */}
-          <div> 
-            <label className="text-white font-bold">
-              EMPRESA:{" "}
+          {/* Autocomplete da descrição do produto */}
+          <>
+            <label className="text-white font-bold text-sm">
+              CATEGORIA:{" "}
               <Autocomplete
-                id="id_empresa"
+                id="descricao_produto"
                 options={options}
                 renderInput={(params) => (
                   <div ref={params.InputProps.ref}>
@@ -55,15 +54,14 @@ export default function CadastroUsuario() {
                     focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50
                      dark:border-neutral-800 dark:bg-neutral-950 dark:ring-offset-neutral-950
                       dark:placeholder:text-neutral-400 dark:focus-visible:ring-neutral-300
-                      text-black mt-1 font-normal font-sm"
-                      placeholder="Selecione a empresa"
+                      text-black mt-1 font-normal"
+                      placeholder="Digite a categoria do produto"
                     />
                   </div>
                 )}
               />
             </label>
-          </div>
-          {/* botao */}
+          </>
           <div className="flex justify-center">
             <button className="text-white bg-black font-bold w-[200px] h-[40px] rounded-xl">
               Cadastrar
