@@ -8,17 +8,17 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 const cadastros = [
-  { rotulo: "Cadastro de Fornecedores" },
-  { rotulo: "Cadastro de Vendedores" },
-  { rotulo: "Cadastro de Clientes" },
-  { rotulo: "Cadastro de Vendas" },
-  { rotulo: "Cadastro de Cidades" },
-  { rotulo: "Cadastro de Produtos" },
-  { rotulo: "Cadastro de Categorias" },
-  { rotulo: "Cadastro de Telefones" },
-  { rotulo: "Cadastro de Contas" },
-  { rotulo: "Cadastro de Movimentação" },
-  { rotulo: "Relatórios" },
+  { rotulo: "Cadastro de Fornecedores", caminho: "/CadastroFornecedor" },
+  { rotulo: "Cadastro de Vendedores", caminho: "/CadastroVendedores" },
+  { rotulo: "Cadastro de Clientes", caminho: "/CadastroClientes" },
+  { rotulo: "Cadastro de Vendas", caminho: "/CadastroVendas" },
+  { rotulo: "Cadastro de Cidades", caminho: "/CadastroCidade" },
+  { rotulo: "Cadastro de Produtos", caminho: "/CadastroProduto" },
+  { rotulo: "Cadastro de Categorias", caminho: "/CadastroCategoria" },
+  { rotulo: "Cadastro de Telefones", caminho: "/CadastroTelefone" },
+  { rotulo: "Cadastro de Contas", caminho: "/CadastroContasReceber" },
+  { rotulo: "Cadastro de Movimentação", caminho: "/CadastroMovimentacaoEstoque" },
+  { rotulo: "Relatórios", caminho: "/Relatorios" },
 ];
 
 export default function InicialPage() {
@@ -40,8 +40,8 @@ export default function InicialPage() {
             </div>
           </DropdownMenuTrigger>
           <DropdownMenuContent className="space-y-2 bg-black">
-            {cadastros.map((item) => (
-              <DropdownMenuItem className="font-bold text-white">
+            {cadastros.map((item, index) => (
+              <DropdownMenuItem key={index} className="font-bold text-white">
                 {item.rotulo}
               </DropdownMenuItem>
             ))}

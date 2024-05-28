@@ -5,22 +5,25 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { HomeIcon } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const cadastros = [
-  { rotulo: "Cadastro de Fornecedores" },
-  { rotulo: "Cadastro de Vendedores" },
-  { rotulo: "Cadastro de Clientes" },
-  { rotulo: "Cadastro de Vendas" },
-  { rotulo: "Cadastro de Cidades" },
-  { rotulo: "Cadastro de Produtos" },
-  { rotulo: "Cadastro de Categorias" },
-  { rotulo: "Cadastro de Telefones" },
-  { rotulo: "Cadastro de Contas" },
-  { rotulo: "Cadastro de Movimentação" },
-  { rotulo: "Relatórios" },
+  { rotulo: "Cadastro de Fornecedores", caminho: "/CadastroFornecedor" },
+  { rotulo: "Cadastro de Vendedores", caminho: "/CadastroVendedores" },
+  { rotulo: "Cadastro de Clientes", caminho: "/CadastroClientes" },
+  { rotulo: "Cadastro de Vendas", caminho: "/CadastroVendas" },
+  { rotulo: "Cadastro de Cidades", caminho: "/CadastroCidade" },
+  { rotulo: "Cadastro de Produtos", caminho: "/CadastroProduto" },
+  { rotulo: "Cadastro de Categorias", caminho: "/CadastroCategoria" },
+  { rotulo: "Cadastro de Telefones", caminho: "/CadastroTelefone" },
+  { rotulo: "Cadastro de Contas", caminho: "/CadastroContasReceber" },
+  { rotulo: "Cadastro de Movimentação", caminho: "/CadastroMovimentacaoEstoque" },
+  { rotulo: "Relatórios", caminho: "/Relatorios" },
 ];
 
 export default function BarMenu() {
+  const navigate = useNavigate();
+
   return (
     <div className="flex items-center justify-between absolute bottom-0 bg-black w-full h-16">
       <DropdownMenu>
@@ -36,7 +39,11 @@ export default function BarMenu() {
         </DropdownMenuTrigger>
         <DropdownMenuContent className="space-y-2 bg-black">
           {cadastros.map((item) => (
-            <DropdownMenuItem className="font-bold text-white">
+            <DropdownMenuItem 
+              key={item.rotulo} 
+              className="font-bold text-white" 
+              onClick={() => navigate(item.caminho)}
+            >
               {item.rotulo}
             </DropdownMenuItem>
           ))}
