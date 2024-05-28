@@ -1,9 +1,16 @@
+
+import React from "react";
+import "./input.css";
 import RouteApp from "../routes";
+
 
 
 function App() {
   return (
-   <RouteApp/>
+    <div className="App">
+      <RouteApp/>
+    </div>
+
   );
 }
 

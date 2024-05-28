@@ -1,47 +1,25 @@
 import GradientWrapper from "../../GradientWrapper";
 import BarMenu from "../../MenuBar";
 import HeaderCadsatro from "../HeaderCadastro";
+import Autocomplete from "@mui/material/Autocomplete";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import Autocomplete from "@mui/material/Autocomplete";
-import * as React from "react";
 
 const options = ["Option 1", "Option 2"];
 
-export default function CadastroUsuario() {
+export default function CadastroVenda() {
   return (
     <GradientWrapper>
-      <HeaderCadsatro label="USUÁRIO" />
-      <div className="flex justify-center items-center mt-14  ">
+      <HeaderCadsatro label="VENDA" />
+      <div className="flex justify-center items-center mt-14">
         {/* Formulario */}
         <form action="" className="flex flex-col gap-4 w-96">
-          <div className="grid w-full max-w-sm items-center gap-1.5">
-            <Label htmlFor="nome" className="text-white font-bold">
-              NOME:
-            </Label>
-            <Input
-              type="text"
-              id="nome_fornecedor"
-              placeholder="Escreva o nome do usuário"
-            />
-          </div>
-          {/* Valor da comissao */}
-          <div className="grid w-full max-w-sm items-center gap-1.5">
-            <Label htmlFor="nome" className="text-white font-bold">
-              COMISSÃO:
-            </Label>
-            <Input
-              type="text"
-              id="cidade"
-              placeholder="Escreva o valor da comissão"
-            />
-          </div>
-          {/* Autocomplete da empresa */}
-          <div> 
+          {/* Autocomplete da descrição do produto */}
+          <>
             <label className="text-white font-bold">
-              EMPRESA:{" "}
+              PRODUTO:{" "}
               <Autocomplete
-                id="id_empresa"
+                id="descricao_produto"
                 options={options}
                 renderInput={(params) => (
                   <div ref={params.InputProps.ref}>
@@ -56,14 +34,36 @@ export default function CadastroUsuario() {
                      dark:border-neutral-800 dark:bg-neutral-950 dark:ring-offset-neutral-950
                       dark:placeholder:text-neutral-400 dark:focus-visible:ring-neutral-300
                       text-black mt-1 font-normal font-sm"
-                      placeholder="Selecione a empresa"
+                      placeholder="Digite a descrição do produto"
                     />
                   </div>
                 )}
               />
             </label>
+          </>
+          {/* Valor da venda */}
+          <div className="grid w-full max-w-sm items-center gap-1.5">
+            <Label htmlFor="nome" className="text-white font-bold">
+              VALOR DA VENDA:
+            </Label>
+            <Input
+              type="text"
+              id="valor_venda"
+              placeholder="Escreva o nome do usuário"
+            />
           </div>
-          {/* botao */}
+          {/* Quantidade */}
+          <div className="grid w-full max-w-sm items-center gap-1.5">
+            <Label htmlFor="nome" className="text-white font-bold">
+              QUANTIDADE:
+            </Label>
+            <Input
+              type="text"
+              id="quantidade"
+              placeholder="Escreva a quantidade vendida"
+            />
+          </div>
+          {/* Botao */}
           <div className="flex justify-center">
             <button className="text-white bg-black font-bold w-[200px] h-[40px] rounded-xl">
               Cadastrar
