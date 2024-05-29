@@ -8,7 +8,7 @@ export default function Login() {
   const handleLogin = () => {
     // Aqui você pode adicionar a lógica de autenticação, se necessário
     // Se a autenticação for bem-sucedida, navegue para a página Inicial
-    navigate("/CadastroFornecedor");}
+    navigate("/InicialPage");}
   return (
     <GradientWrapper>
       <div className="flex flex-col items-center gap-5">
