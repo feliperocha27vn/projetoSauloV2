@@ -8,21 +8,27 @@ import { HomeIcon } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const cadastros = [
+ 
   { rotulo: "Cadastro de Fornecedores", caminho: "/CadastroFornecedor" },
   { rotulo: "Cadastro de Vendedores", caminho: "/CadastroVendedores" },
   { rotulo: "Cadastro de Clientes", caminho: "/CadastroClientes" },
-  { rotulo: "Cadastro de Vendas", caminho: "/CadastroVendas" },
+  { rotulo: "Vendas", caminho: "/CadastroVenda" },
   { rotulo: "Cadastro de Cidades", caminho: "/CadastroCidade" },
   { rotulo: "Cadastro de Produtos", caminho: "/CadastroProduto" },
   { rotulo: "Cadastro de Categorias", caminho: "/CadastroCategoria" },
   { rotulo: "Cadastro de Telefones", caminho: "/CadastroTelefone" },
-  { rotulo: "Cadastro de Contas", caminho: "/CadastroContasReceber" },
-  { rotulo: "Cadastro de Movimentação", caminho: "/CadastroMovimentacaoEstoque" },
+  { rotulo: "Contas", caminho: "/CadastroContasReceber" },
+  { rotulo: "Movimentação", caminho: "/CadastroMovimentacaoEstoque" },
   { rotulo: "Relatórios", caminho: "/Relatorios" },
 ];
 
 export default function BarMenu() {
   const navigate = useNavigate();
+
+  function sair(){
+
+    navigate("/InicialPage");
+  }
 
   return (
     <div className="flex items-center justify-between absolute bottom-0 bg-black w-full h-16">
@@ -49,7 +55,7 @@ export default function BarMenu() {
           ))}
         </DropdownMenuContent>
       </DropdownMenu>
-      <button className="flex items-center p-0.5 w-[70px] h-[30px] bg-white rounded-lg space-x-1 mr-2">
+      <button className="flex items-center p-0.5 w-[70px] h-[30px] bg-white rounded-lg space-x-1 mr-2" onClick={sair}>
         <HomeIcon />
         <label htmlFor="" className="font-bold">
           SAIR

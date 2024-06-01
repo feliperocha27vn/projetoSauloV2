@@ -1,6 +1,6 @@
 import GradientWrapper from "../GradientWrapper";
 import LogoClothing from "../../assets/imgs/logo.png";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   

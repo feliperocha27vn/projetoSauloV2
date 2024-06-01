@@ -1,3 +1,5 @@
+import React from 'react';
+import { Link } from 'react-router-dom'; // Importe Link do react-router-dom
 import GradientWrapper from "../GradientWrapper";
 import LogoClothing from "../../assets/imgs/logo.png";
 import {
@@ -11,13 +13,13 @@ const cadastros = [
   { rotulo: "Cadastro de Fornecedores", caminho: "/CadastroFornecedor" },
   { rotulo: "Cadastro de Vendedores", caminho: "/CadastroVendedores" },
   { rotulo: "Cadastro de Clientes", caminho: "/CadastroClientes" },
-  { rotulo: "Cadastro de Vendas", caminho: "/CadastroVendas" },
+  { rotulo: "Vendas", caminho: "/CadastroVenda" },
   { rotulo: "Cadastro de Cidades", caminho: "/CadastroCidade" },
   { rotulo: "Cadastro de Produtos", caminho: "/CadastroProduto" },
   { rotulo: "Cadastro de Categorias", caminho: "/CadastroCategoria" },
   { rotulo: "Cadastro de Telefones", caminho: "/CadastroTelefone" },
-  { rotulo: "Cadastro de Contas", caminho: "/CadastroContasReceber" },
-  { rotulo: "Cadastro de Movimentação", caminho: "/CadastroMovimentacaoEstoque" },
+  { rotulo: "Contas", caminho: "/CadastroContasReceber" },
+  { rotulo: "Movimentação", caminho: "/CadastroMovimentacaoEstoque" },
   { rotulo: "Relatórios", caminho: "/Relatorios" },
 ];
 
@@ -25,7 +27,7 @@ export default function InicialPage() {
   return (
     <GradientWrapper>
       <div className="flex justify-end h-full">
-        <img src={LogoClothing} className="w-[600px] h-[600px]" />
+        <img src={LogoClothing} className="w-[600px] h-[600px]" alt="Logo" />
       </div>
       <div className="absolute bottom-0 bg-black w-full h-16">
         <DropdownMenu>
@@ -42,7 +44,7 @@ export default function InicialPage() {
           <DropdownMenuContent className="space-y-2 bg-black">
             {cadastros.map((item, index) => (
               <DropdownMenuItem key={index} className="font-bold text-white">
-                {item.rotulo}
+                <Link to={item.caminho}>{item.rotulo}</Link>
               </DropdownMenuItem>
             ))}
           </DropdownMenuContent>

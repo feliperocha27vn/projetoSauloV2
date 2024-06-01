@@ -36,8 +36,8 @@ export default function CadastroVenda() {
               )}
             />
             <Input
-              type="text"
-              id="telefone"
+              type="number" // Alterado para tipo number
+              id="valor_produto" // Alterado o id para ser único
               placeholder="VALOR DO PRODUTO"
               className="flex h-10 w-72 rounded-md border border-neutral-200
               bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent 
@@ -47,10 +47,12 @@ export default function CadastroVenda() {
                dark:border-neutral-800 dark:bg-neutral-950 dark:ring-offset-neutral-950
                 dark:placeholder:text-neutral-400 dark:focus-visible:ring-neutral-300
                 text-black mt-1 font-normal"
+              inputmode="numeric" // Define o modo de entrada como numérico
+              pattern="\d*" // Permite apenas dígitos numéricos
             />
             <Input
-              type="text"
-              id="telefone"
+              type="number" // Alterado para tipo number
+              id="quantidade_produto" // Alterado o id para ser único
               placeholder="INSIRA A QUANTIDADE DO PRODUTO"
               className="flex h-10 w-72 rounded-md border border-neutral-200
               bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent 
@@ -60,6 +62,8 @@ export default function CadastroVenda() {
                dark:border-neutral-800 dark:bg-neutral-950 dark:ring-offset-neutral-950
                 dark:placeholder:text-neutral-400 dark:focus-visible:ring-neutral-300
                 text-black mt-1 font-normal"
+              inputmode="numeric" // Define o modo de entrada como numérico
+              pattern="\d*" // Permite apenas dígitos numéricos
             />
             <button className="h-10 w-36 bg-black rounded-xl border border-black px-3 py-2 text-xs flex items-center mt-1">
               <label htmlFor="" className="text-white">
@@ -73,10 +77,10 @@ export default function CadastroVenda() {
                 DESCRIÇÃO DO PRODUTO
               </label>
               <label htmlFor="" className="text-white">
-                R$ XXX,XX
+                R$ 00,00
               </label>
               <label htmlFor="" className="text-white">
-                XX UN
+                X UN
               </label>
             </div>
           </div>
