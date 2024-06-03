@@ -15,6 +15,7 @@ import ContasReceber from "./src/components/Relatorios/ContasReceber";
 import MaisVendidos from "./src/components/Relatorios/MaisVendidos";
 import MaisVendidosEmpresa from "./src/components/Relatorios/MaisVendidosEmpresa";
 import MovimentacaoEstoque from "./src/components/Relatorios/MovimentacaoEstoque";
+import Relatorio from "./src/components/Relatorios/Relatorio";
 
 function RouteApp() {
   return (
@@ -35,6 +36,7 @@ function RouteApp() {
         <Route path="/MaisVendidos" element={<MaisVendidos />} />
         <Route path="/MaisVendidosEmpresa" element={<MaisVendidosEmpresa />} />
         <Route path="/MovimentacaoEstoque" element={<MovimentacaoEstoque />} />
+        <Route path="/Relatorios" element={<Relatorio />} />
       </Routes>
     </BrowserRouter>
   );

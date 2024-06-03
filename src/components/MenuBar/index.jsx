@@ -17,9 +17,12 @@ const cadastros = [
   { rotulo: "Cadastro de Produtos", caminho: "/CadastroProduto" },
   { rotulo: "Cadastro de Categorias", caminho: "/CadastroCategoria" },
   { rotulo: "Cadastro de Telefones", caminho: "/CadastroTelefone" },
-  { rotulo: "Contas", caminho: "/ContasReceber" },
-  { rotulo: "Movimentação", caminho: "/MovimentacaoEstoque" },
+  // { rotulo: "Contas", caminho: "/ContasReceber" },
+  // { rotulo: "Movimentação", caminho: "/MovimentacaoEstoque" },
   { rotulo: "Relatórios", caminho: "/Relatorios" },
+  // { rotulo: "Mais Vendidos", caminho: "/MaisVendidos" },
+  // { rotulo: "Mais Vendidos Por Empresa", caminho: "/MaisVendidosEmpresa" },
+  // { rotulo: "Movimentação de Estoque", caminho: "/MovimentacaoEstoque" },
 ];
 
 export default function BarMenu() {

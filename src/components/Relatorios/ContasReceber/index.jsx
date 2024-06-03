@@ -9,7 +9,7 @@ export default function ContasReceber() {
       <HeaderCadsatro label="CONTAS A RECEBER" />
       <div className="flex justify-center items-center mt-4">
         <div className="w-11/12 h-[30rem] rounded-3xl bg-[#053057] flex flex-col items-center">
-        <div className="p-4 flex items-center gap-x-4">
+          <div className="p-4 flex items-center gap-x-4">
             <label htmlFor="" className="text-sm font-bold text-white">
               INSIRA A DATA INICIAL
             </label>
