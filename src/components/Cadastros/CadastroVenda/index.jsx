@@ -10,9 +10,9 @@ export default function CadastroVenda() {
   return (
     <GradientWrapper>
       <HeaderCadsatro label="VENDA" />
-      <div className="flex justify-center items-center mt-14">
+      <div className="flex justify-center items-center mt-2">
         {/* inputs */}
-        <div className="w-11/12 h-[35rem] rounded-3xl bg-[#053057] flex flex-col items-center">
+        <div className="w-11/12 h-[30rem] rounded-3xl bg-[#053057] flex flex-col items-center">
           <div className="p-4 flex items-center gap-x-4">
             <Autocomplete
               id="descricao_produto"

@@ -10,7 +10,7 @@ const options = ["Option 1", "Option 2"];
 export default function CadastroProduto() {
   return (
     <GradientWrapper>
-      <HeaderCadsatro label="PRODUTO" />
+      <HeaderCadsatro label="CADASTRO DE PRODUTO" />
       <div className="flex justify-center items-center mt-14">
         <form action="" className="flex flex-col gap-4 w-96">
           {/* descrição do produto */}

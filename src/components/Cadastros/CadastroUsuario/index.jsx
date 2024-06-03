@@ -11,7 +11,7 @@ const options = ["Option 1", "Option 2"];
 export default function CadastroUsuario() {
   return (
     <GradientWrapper>
-      <HeaderCadsatro label="USUÁRIO" />
+      <HeaderCadsatro label="CADASTRO DE USUÁRIO" />
       <div className="flex justify-center items-center mt-14  ">
         {/* Formulario */}
         <form action="" className="flex flex-col gap-4 w-96">

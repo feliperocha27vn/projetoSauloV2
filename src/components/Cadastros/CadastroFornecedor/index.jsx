@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 export default function CadastroFornecedor() {
   return (
     <GradientWrapper>
-      <HeaderCadsatro label="FORNECEDOR" />
+      <HeaderCadsatro label="CADASTRO DE FORNECEDOR" />
       <div className="flex justify-center items-center mt-14">
         {/* formulario */}
         <form action="" className="flex flex-col gap-4 w-96">

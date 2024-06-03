@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 export default function CadastroTelefone() {
   return (
     <GradientWrapper>
-      <HeaderCadsatro label="TELEFONE" />
+      <HeaderCadsatro label="CADASTRO DE TELEFONE" />
       <div className="flex justify-center items-center mt-14">
         <form action="" className="flex flex-col gap-4 w-96">
           {/* nome da categoria */}

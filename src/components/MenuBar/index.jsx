@@ -10,15 +10,15 @@ import { useNavigate } from "react-router-dom";
 const cadastros = [
  
   { rotulo: "Cadastro de Fornecedores", caminho: "/CadastroFornecedor" },
-  { rotulo: "Cadastro de Vendedores", caminho: "/CadastroVendedores" },
+  { rotulo: "Cadastro de Usuário", caminho: "/CadastroUsuario" },
   { rotulo: "Cadastro de Clientes", caminho: "/CadastroClientes" },
   { rotulo: "Vendas", caminho: "/CadastroVenda" },
   { rotulo: "Cadastro de Cidades", caminho: "/CadastroCidade" },
   { rotulo: "Cadastro de Produtos", caminho: "/CadastroProduto" },
   { rotulo: "Cadastro de Categorias", caminho: "/CadastroCategoria" },
   { rotulo: "Cadastro de Telefones", caminho: "/CadastroTelefone" },
-  { rotulo: "Contas", caminho: "/CadastroContasReceber" },
-  { rotulo: "Movimentação", caminho: "/CadastroMovimentacaoEstoque" },
+  { rotulo: "Contas", caminho: "/ContasReceber" },
+  { rotulo: "Movimentação", caminho: "/MovimentacaoEstoque" },
   { rotulo: "Relatórios", caminho: "/Relatorios" },
 ];
 

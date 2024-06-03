@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 export default function CadastroCategoria() {
   return (
     <GradientWrapper>
-      <HeaderCadsatro label="CATEGORIA" />
+      <HeaderCadsatro label="CADASTRO DE CATEGORIA" />
       <div className="flex justify-center items-center mt-14">
       <form action="" className="flex flex-col gap-4 w-96">
           {/* nome da categoria */}
