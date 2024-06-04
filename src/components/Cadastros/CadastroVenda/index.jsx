@@ -71,15 +71,15 @@ export default function CadastroVenda() {
               </label>
             </button>
           </div>
-          <div className="w-11/12 h-5/6 border-2 border-black">
-            <div className="flex justify-between p-2 border-b-2 border-black">
-              <label htmlFor="" className="text-white">
+          <div className="w-11/12 h-5/6 border-2 border-neutral-600 bg-white rounded-xl">
+            <div className="flex justify-between p-2 border-b-2 border-neutral-600">
+              <label htmlFor="" className="font-semibold">
                 DESCRIÇÃO DO PRODUTO
               </label>
-              <label htmlFor="" className="text-white">
+              <label htmlFor="" className="font-semibold">
                 R$ 00,00
               </label>
-              <label htmlFor="" className="text-white">
+              <label htmlFor="" className="font-semibold" >
                 X UN
               </label>
             </div>

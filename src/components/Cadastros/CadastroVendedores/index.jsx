@@ -12,7 +12,7 @@ export default function CadastroUsuario() {
   return (
     <GradientWrapper>
       <HeaderCadsatro label="USUÁRIO" />
-      <div className="flex justify-center items-center mt-14  ">
+      <div className="flex justify-center items-center mt-3  ">
         {/* Formulario */}
         <form action="" className="flex flex-col gap-4 w-96">
           <div className="grid w-full max-w-sm items-center gap-1.5">
@@ -21,8 +21,28 @@ export default function CadastroUsuario() {
             </Label>
             <Input
               type="text"
-              id="nome_fornecedor"
+              id="nome_usuario"
               placeholder="Escreva o nome do usuário"
+            />
+          </div>
+          <div className="grid w-full max-w-sm items-center gap-1.5">
+            <Label htmlFor="senha" className="text-white font-bold">
+              SENHA:
+            </Label>
+            <Input
+              type="password"
+              id="senha_usuario"
+              placeholder="Cadastre uma senha"
+            />
+          </div>
+          <div className="grid w-full max-w-sm items-center gap-1.5">
+            <Label htmlFor="telefone" className="text-white font-bold">
+              TELEFONE:
+            </Label>
+            <Input
+              type="number"
+              id="telefone_usuario"
+              placeholder="Adicione um telefone"
             />
           </div>
           {/* Valor da comissao */}
@@ -31,9 +51,9 @@ export default function CadastroUsuario() {
               COMISSÃO:
             </Label>
             <Input
-              type="text"
+              type="number"
               id="cidade"
-              placeholder="Escreva o valor da comissão"
+              placeholder="Escreva o valor da comissão... EX: (10%)"
             />
           </div>
           {/* Autocomplete da empresa */}
