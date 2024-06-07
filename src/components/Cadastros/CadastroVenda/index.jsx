@@ -7,6 +7,14 @@ import { Input } from "@/components/ui/input";
 const options = ["Option 1", "Option 2"];
 const formaPagamento = ["Crédito", "Débito"];
 
+const cadastroVendas = [
+  {
+    descricaoProd: "Jaqueta Jeans",
+    valor: "75,00",
+    quantidade: "1",
+  },
+];
+
 export default function CadastroVenda() {
   return (
     <GradientWrapper>
@@ -63,46 +71,49 @@ export default function CadastroVenda() {
           </button>
         </div>
         {/* background list */}
-        <div className="w-[1024px] h-[640px] bg-[#053057] rounded-lg">
-          <div className="p-3">
+        <div className="w-[1024px] h-[640px] bg-[#053057] rounded-lg flex flex-col items-center">
+          <div className="w-11/12 border-2 border-black bg-white rounded-xl mt-4">
             {/* grid listagem produtos */}
-            <div className="grid grid-cols-3 row-auto justify-items-center">
+            <div className="grid grid-cols-3 p-2 border-b-2 border-black">
               {/* descrições */}
-              <label htmlFor="" className="text-white">
+              <label htmlFor="" className="font-semibold">
                 DESCRIÇÃO PRODUTO
               </label>
-              <label htmlFor="" className="text-white">
+              <label htmlFor="" className="font-semibold text-center">
                 VALOR
               </label>
-              <label htmlFor="" className="text-white">
+              <label htmlFor="" className="font-semibold text-right">
                 QUANTIDADE
               </label>
-              {/* list produtos */}
-              <div className="border w-full flex justify-center">
-                <label htmlFor="" className="text-white">
-                  CAMISA POLO
-                </label>
-              </div>
-              <div className="border w-full flex justify-center">
-                <label htmlFor="" className="text-white">
-                  R$ 150,00
-                </label>
-              </div>
-              <div className="border w-full flex justify-center">
-                <label htmlFor="" className="text-white">
-                  20
-                </label>
-              </div>
             </div>
-            {/* inputs */}
+            {/* list */}
+            <div className="h-[300px] overflow-y-auto">
+              {cadastroVendas.map((cadastroVenda) => (
+                <div
+                  key={cadastroVenda.id}
+                  className="grid grid-cols-3 p-2 border-b-2 border-black"
+                >
+                  <label htmlFor="" className="">
+                    {cadastroVenda.descricaoProd}
+                  </label>
+                  <label htmlFor="" className="text-center">
+                    R$ {cadastroVenda.valor}
+                  </label>
+                  <label htmlFor="" className="text-right">
+                    {cadastroVenda.quantidade} UN
+                  </label>
+                </div>
+              ))}
+            </div>
           </div>
+          {/* inputs */}
           {/* campos para finalizar venda */}
           <div className="flex gap-x-2 pl-3">
             {/* campo quantidade parcelas */}
             <Input
               type="number"
               id="quantidade_parcelas"
-              placeholder="VALOR DO PRODUTO"
+              placeholder="QUANTIADE DE PARCELAS"
               className="flex h-10 w-72 rounded-md border border-neutral-200
               bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent 
               file:text-sm file:font-medium placeholder:text-neutral-500 

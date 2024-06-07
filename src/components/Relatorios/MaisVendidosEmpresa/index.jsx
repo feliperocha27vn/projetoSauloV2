@@ -6,12 +6,21 @@ import Autocomplete from "@mui/material/Autocomplete";
 
 const options = ["Option 1", "Option 2"];
 
+const vendasEmpresa = [
+  {
+    descricaoProduto: "Calça",
+    unidadesVendidas: "500",
+    valorTotal: "50.000,00",
+  },
+];
+
 export default function MaisVendidosEmpresa() {
   return (
     <GradientWrapper>
       <HeaderCadsatro label="MAIS VENDIDOS POR EMPRESA" />
       <div className="flex justify-center items-center mt-4">
         <div className="w-11/12 h-[30rem] rounded-3xl bg-[#053057] flex flex-col items-center">
+          {/* inputs */}
           <div className="p-4 flex items-center gap-x-4">
             <label htmlFor="" className="text-sm font-bold text-white">
               INSIRA A DATA INICIAL
@@ -70,23 +79,39 @@ export default function MaisVendidosEmpresa() {
                 </div>
               )}
             />
-            <button className="h-10 w-36 bg-black rounded-xl border border-black px-3 py-2 text-xs flex justify-center items-center mt-1">
-              <label htmlFor="" className="text-white">
-                BUSCAR
-              </label>
+            <button className="h-10 w-36 bg-black rounded-xl border border-black px-3 py-2 text-xs flex justify-center items-center mt-1 text-white">
+              BUSCAR
             </button>
           </div>
-          <div className="w-11/12 h-5/6 border-2 border-black">
-            <div className="flex justify-between p-2 border-b-2 border-black">
-              <label htmlFor="" className="text-white font-semibold">
+          <div className="w-11/12 border-2 border-black bg-white rounded-xl">
+            <div className="grid grid-cols-3 p-2 border-b-2 border-black">
+              <label htmlFor="" className="font-semibold">
                 DESCRIÇÃO DO PRODUTO
               </label>
-              <label htmlFor="" className="text-white font-semibold">
+              <label htmlFor="" className="font-semibold text-center">
                 UNIDADES VENDIDAS
               </label>
-              <label htmlFor="" className="text-white font-semibold">
+              <label htmlFor="" className="font-semibold text-right">
                 VALOR TOTAL
               </label>
+            </div>
+            <div className="h-[300px] overflow-y-auto">
+              {vendasEmpresa.map((vendaEmpresa) => (
+                <div
+                  key={vendaEmpresa.id}
+                  className="grid grid-cols-3 p-2 border-b-2 border-black"
+                >
+                  <label htmlFor="" className="">
+                    {vendaEmpresa.descricaoProduto}
+                  </label>
+                  <label htmlFor="" className="text-center">
+                    {vendaEmpresa.unidadesVendidas} UN
+                  </label>
+                  <label htmlFor="" className="text-right">
+                    R$ {vendaEmpresa.valorTotal}
+                  </label>
+                </div>
+              ))}
             </div>
           </div>
           <button className="p-2 text-white bg-black w-[150px] m-2 rounded-xl font-semibold">

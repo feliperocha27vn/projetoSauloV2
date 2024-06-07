@@ -5,6 +5,7 @@ import BarMenu from "../../MenuBar";
 import {
   faBoxesStacked,
   faHandHoldingDollar,
+  faPercent,
   faSackDollar,
 } from "@fortawesome/free-solid-svg-icons";
 import { faBuilding } from "@fortawesome/free-regular-svg-icons";
@@ -49,6 +50,14 @@ export default function Relatorio() {
             <div className="flex justify-center w-full">
               <label htmlFor="" className="font-bold font-sans text-lg">
                 MOVIMENTAÇÃO DE ESTOQUE
+              </label>
+            </div>
+          </div>
+          <div className="bg-white p-2 flex items-center gap-x-6 rounded-lg w-[400px]">
+            <FontAwesomeIcon icon={faPercent} className="h-[80px]" />
+            <div className="flex justify-center w-full">
+              <label htmlFor="" className="font-bold font-sans text-lg">
+                COMISSÃO
               </label>
             </div>
           </div>

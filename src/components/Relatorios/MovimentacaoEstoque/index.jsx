@@ -6,6 +6,15 @@ import Autocomplete from "@mui/material/Autocomplete";
 
 const options = ["Option 1", "Option 2"];
 
+const movimentosEstoque = [
+  {
+    descricaoProduto: "Camisa Esporte",
+    entrada: 15,
+    saida: 5,
+    totalEstoque: 10,
+  },
+];
+
 export default function MovimentacaoEstoque() {
   return (
     <GradientWrapper>
@@ -19,7 +28,7 @@ export default function MovimentacaoEstoque() {
             <Input
               type="date"
               id="quantidade_produto"
-              placeholder="INSIRA A QUANTIDADE DO PRODUTO"
+              placeholder=""
               className="flex h-10 w-60 rounded-md border border-neutral-200
               bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent 
               file:text-sm file:font-medium placeholder:text-neutral-500 
@@ -37,7 +46,7 @@ export default function MovimentacaoEstoque() {
             <Input
               type="date"
               id="quantidade_produto"
-              placeholder="INSIRA A QUANTIDADE DO PRODUTO"
+              placeholder=""
               className="flex h-10 w-60 rounded-md border border-neutral-200
               bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent 
               file:text-sm file:font-medium placeholder:text-neutral-500 
@@ -76,20 +85,42 @@ export default function MovimentacaoEstoque() {
               </label>
             </button>
           </div>
-          <div className="w-11/12 h-5/6 border-2 border-black">
-            <div className="flex justify-between p-2 border-b-2 border-black">
-              <label htmlFor="" className="text-white font-semibold">
+          <div className="w-11/12 border-2 border-black bg-white rounded-xl">
+            <div className="grid grid-cols-4 p-2 border-b-2 border-black">
+              <label htmlFor="" className="font-semibold">
                 DESCRIÇÃO DO PRODUTO
               </label>
-              <label htmlFor="" className="text-white font-semibold">
+              <label htmlFor="" className="font-semibold text-center">
                 ENTRADA
               </label>
-              <label htmlFor="" className="text-white font-semibold">
+              <label htmlFor="" className="font-semibold text-center">
                 SAIDA
               </label>
-              <label htmlFor="" className="text-white font-semibold">
+              <label htmlFor="" className="font-semibold text-right">
                 TOTAL EM ESTOQUE
               </label>
+            </div>
+            {/* list */}
+            <div className="h-[300px] overflow-y-auto">
+              {movimentosEstoque.map((movimentoEstoque) => (
+                <div
+                  key={movimentoEstoque.id}
+                  className="grid grid-cols-4 p-2 border-b-2 border-black"
+                >
+                  <label htmlFor="" className="">
+                    {movimentoEstoque.descricaoProduto}
+                  </label>
+                  <label htmlFor="" className="text-center">
+                    {movimentoEstoque.entrada} UN
+                  </label>
+                  <label htmlFor="" className="text-center">
+                    {movimentoEstoque.saida} UN
+                  </label>
+                  <label htmlFor="" className="text-right">
+                    {movimentoEstoque.totalEstoque} UN
+                  </label>
+                </div>
+              ))}
             </div>
           </div>
           <button className="p-2 text-white bg-black w-[150px] m-2 rounded-xl font-semibold">
