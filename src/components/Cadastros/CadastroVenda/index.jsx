@@ -48,7 +48,7 @@ export default function CadastroVenda() {
             )}
           />
           {/* valor produto */}
-          <Input
+        {/*  <Input
             type="number"
             id="valor_produto"
             placeholder="VALOR DO PRODUTO"
@@ -62,7 +62,7 @@ export default function CadastroVenda() {
                 text-black mt-1 font-normal"
             inputmode="numeric"
             pattern="\d*"
-          />
+          />*/}
           {/* botão para adicionar venda */}
           <button className="h-10 w-36 bg-black rounded-xl border border-black px-3 py-2 text-xs flex items-center mt-1">
             <label htmlFor="" className="text-white">
@@ -108,12 +108,12 @@ export default function CadastroVenda() {
           </div>
           {/* inputs */}
           {/* campos para finalizar venda */}
-          <div className="flex gap-x-2 pl-3">
+          <div className="flex gap-x-2 pl-3 mt-10">
             {/* campo quantidade parcelas */}
             <Input
               type="number"
               id="quantidade_parcelas"
-              placeholder="QUANTIADE DE PARCELAS"
+              placeholder="QUANTIDADE DE PARCELAS"
               className="flex h-10 w-72 rounded-md border border-neutral-200
               bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent 
               file:text-sm file:font-medium placeholder:text-neutral-500 
@@ -121,7 +121,7 @@ export default function CadastroVenda() {
               focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50
                dark:border-neutral-800 dark:bg-neutral-950 dark:ring-offset-neutral-950
                 dark:placeholder:text-neutral-400 dark:focus-visible:ring-neutral-300
-                text-black mt-1 font-normal"
+                text-black mt-10 font-normal"
               inputmode="numeric"
               pattern="\d*"
             />
@@ -141,14 +141,14 @@ export default function CadastroVenda() {
                     focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50
                      dark:border-neutral-800 dark:bg-neutral-950 dark:ring-offset-neutral-950
                       dark:placeholder:text-neutral-400 dark:focus-visible:ring-neutral-300
-                      text-black mt-1 font-normal"
+                      text-black mt-10 font-normal"
                     placeholder="FORMA DE PAGAMENTO"
                   />
                 </div>
               )}
             />
             {/* botão finalizar venda */}
-            <button className="h-10 w-36 bg-black rounded-xl border border-black px-3 py-2 text-xs flex justify-center items-center mt-1">
+            <button className="h-10 w-36 bg-black rounded-xl border border-black px-3 py-2 text-xs flex justify-center items-center mt-10">
               <label htmlFor="" className="text-white">
                 FINALIZAR VENDA
               </label>

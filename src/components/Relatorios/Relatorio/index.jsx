@@ -10,7 +10,28 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faBuilding } from "@fortawesome/free-regular-svg-icons";
 
+import { Navigate, useNavigate } from "react-router-dom";
+
 export default function Relatorio() {
+
+  const navigater = useNavigate()
+
+  const irContasReceber= () =>{
+    navigater("/ContasReceber")
+  }
+  const irMaisVendidos=()=>{
+    navigater("/MaisVendidos")
+  }
+  const irPorEmpresa=()=>{
+    navigater("/MaisVendidosEmpresa")
+  }
+  const irEstoque = ()=>{
+    navigater("/MovimentacaoEstoque")
+  }
+  const irComissao=()=>{
+    navigater("/Comissoes")
+  }
+
   return (
     <GradientWrapper>
       <HeaderCadsatro label="RELATÓRIOS" />
@@ -20,8 +41,8 @@ export default function Relatorio() {
           {/* contas a receber */}
           <div className="bg-white p-2 flex items-center gap-x-6 rounded-lg w-[400px]">
             <FontAwesomeIcon icon={faSackDollar} className="h-[80px]" />
-            <div className="flex justify-center w-full">
-              <label htmlFor="" className="font-bold font-sans text-lg">
+              <div className="flex justify-center w-full"  >
+                <label htmlFor="" className="font-bold font-sans text-lg"onClick={irContasReceber}>
                 CONTAS A RECEBER
               </label>
             </div>
@@ -30,7 +51,7 @@ export default function Relatorio() {
           <div className="bg-white p-2 flex items-center gap-x-6 rounded-lg w-[400px]">
             <FontAwesomeIcon icon={faHandHoldingDollar} className="h-[80px]" />
             <div className="flex justify-center w-full">
-              <label htmlFor="" className="font-bold font-sans text-lg">
+              <label htmlFor="" className="font-bold font-sans text-lg"onClick={irMaisVendidos}>
                 MAIS VENDIDOS
               </label>
             </div>
@@ -39,7 +60,7 @@ export default function Relatorio() {
           <div className="bg-white p-2 flex items-center gap-x-6 rounded-lg w-[400px]">
             <FontAwesomeIcon icon={faBuilding} className="h-[80px]" />
             <div className="flex justify-center w-full">
-              <label htmlFor="" className="font-bold font-sans text-lg">
+              <label htmlFor="" className="font-bold font-sans text-lg"onClick={irPorEmpresa}>
                 MAIS VENDIDOS POR EMPRESA
               </label>
             </div>
@@ -48,7 +69,7 @@ export default function Relatorio() {
           <div className="bg-white p-2 flex items-center gap-x-6 rounded-lg w-[400px]">
             <FontAwesomeIcon icon={faBoxesStacked} className="h-[80px]" />
             <div className="flex justify-center w-full">
-              <label htmlFor="" className="font-bold font-sans text-lg">
+              <label htmlFor="" className="font-bold font-sans text-lg"onClick={irEstoque}>
                 MOVIMENTAÇÃO DE ESTOQUE
               </label>
             </div>
@@ -56,7 +77,7 @@ export default function Relatorio() {
           <div className="bg-white p-2 flex items-center gap-x-6 rounded-lg w-[400px]">
             <FontAwesomeIcon icon={faPercent} className="h-[80px]" />
             <div className="flex justify-center w-full">
-              <label htmlFor="" className="font-bold font-sans text-lg">
+              <label htmlFor="" className="font-bold font-sans text-lg"onClick={irComissao}>
                 COMISSÃO
               </label>
             </div>
