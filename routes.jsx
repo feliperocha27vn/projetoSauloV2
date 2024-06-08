@@ -24,6 +24,7 @@ import FornecedorUpdate from "./src/components/Updates/FornecedorUpdate";
 import ProdutoUpdate from "./src/components/Updates/ProdutoUpdate";
 import ClienteUpdate from "./src/components/Updates/ClienteUpdate";
 import CategoriaUpdate from "./src/components/Updates/CategoriaUpdate";
+import TabelaPreco from "./src/components/Cadastros/TabelaPreco";
 
 
 
@@ -55,6 +56,7 @@ function RouteApp() {
         <Route path="/ProdutoUpdate" element={<ProdutoUpdate />} />
         <Route path="/ClienteUpdate" element={<ClienteUpdate />} />
         <Route path="/CategoriaUpdate" element={<CategoriaUpdate/>}/>
+        <Route path="/TabelaPreco" element={<TabelaPreco/>}/>
       </Routes>
     </BrowserRouter>
   );

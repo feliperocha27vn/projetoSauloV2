@@ -14,6 +14,7 @@ const cadastros = [
   { rotulo: "Vendas", caminho: "/CadastroVenda" },
   { rotulo: "Cadastro de Cidades", caminho: "/CadastroCidade" },
   { rotulo: "Cadastro de Produtos", caminho: "/CadastroProduto" },
+  {rotulo: "Tabela Preço", caminho: "/TabelaPreco"},
   { rotulo: "Cadastro de Categorias", caminho: "/CadastroCategoria" },
   { rotulo: "Relatórios", caminho: "/Relatorios" },
   { rotulo: "Administração", caminho: "/Administracao" },
