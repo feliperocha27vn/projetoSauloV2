@@ -1,3 +1,4 @@
+import { useState } from "react";
 import GradientWrapper from "../../GradientWrapper";
 import BarMenu from "../../MenuBar";
 import HeaderCadsatro from "../HeaderCadastro";
@@ -7,7 +8,13 @@ import Autocomplete from "@mui/material/Autocomplete";
 
 const options = ["Option 1", "Option 2"];
 
+
 export default function CadastroProduto() {
+  const [message, setMessage] = useState('');
+
+const produto = () => {
+  setMessage('PRODUTO CADASTRADO');
+}
   return (
     <GradientWrapper>
       <HeaderCadsatro label="CADASTRO DE PRODUTO" />
@@ -63,10 +70,15 @@ export default function CadastroProduto() {
             </label>
           </>
           <div className="flex justify-center">
-            <button className="text-white bg-black font-bold w-[200px] h-[40px] rounded-xl">
+            <button className="text-white bg-black font-bold w-[200px] h-[40px] rounded-xl" onClick={produto}>
               Cadastrar
             </button>
           </div>
+          {message && (
+            <div className="mt-4 lg:mt-12 p-2 bg-green-500 text-white rounded font-bold text-center">
+              {message}
+            </div>
+          )}
         </form>
       </div>
       <BarMenu />

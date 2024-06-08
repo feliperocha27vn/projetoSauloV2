@@ -12,6 +12,11 @@ import * as React from "react";
 const options = ["Option 1", "Option 2"];
 
 export default function CadastroUsuario() {
+  const [message, setMessage] = useState('');
+
+  const usuario = () => {
+    setMessage('USUARIO CADASTRADO');
+  }
   const [telefones, setTelefones] = useState(['']);
 
   const adicionarTelefone = () => {
@@ -122,10 +127,15 @@ export default function CadastroUsuario() {
             </label>
           </div>
           <div className="flex justify-center">
-            <button className="text-white bg-black font-bold w-[200px] h-[40px] rounded-xl">
+            <button className="text-white bg-black font-bold w-[200px] h-[40px] rounded-xl" onClick={usuario}>
               Cadastrar
             </button>
           </div>
+          {message && (
+            <div className="mt-4 lg:mt-12 p-2 bg-green-500 text-white rounded font-bold text-center">
+              {message}
+            </div>
+          )}
         </form>
       </div>
       <BarMenu />
