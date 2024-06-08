@@ -5,6 +5,7 @@ import Autocomplete from "@mui/material/Autocomplete";
 import { Input } from "@/components/ui/input";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 
 const options = ["Option 1", "Option 2"];
 const formaPagamento = ["Crédito", "Débito"];
@@ -18,6 +19,11 @@ const cadastroVendas = [
 ];
 
 export default function CadastroVenda() {
+  const [message, setMessage] = useState('');
+
+  const finalizarVenda = () => {
+    setMessage('VENDA FINALIZADA');
+  }
   return (
     <GradientWrapper>
       <HeaderCadsatro label="VENDA" />
@@ -158,12 +164,18 @@ export default function CadastroVenda() {
               )}
             />
             {/* botão finalizar venda */}
-            <button className="h-10 w-36 bg-black rounded-xl border border-black px-3 py-2 text-xs flex justify-center items-center mt-10">
+            <button className="h-10 w-36 bg-black rounded-xl border border-black px-3 py-2 text-xs flex justify-center items-center mt-10" onClick={(finalizarVenda)}>
               <label htmlFor="" className="text-white">
                 FINALIZAR VENDA
               </label>
             </button>
           </div>
+        {/* exibir mensagem de venda finalizada */}
+        {message && (
+            <div className="mt-12 p-2 bg-green-500 text-white rounded font-bold">
+              {message}
+            </div>
+          )}
         </div>
       </div>
       <BarMenu />

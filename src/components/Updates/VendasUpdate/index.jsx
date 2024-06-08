@@ -4,6 +4,7 @@ import GradientWrapper from "../../GradientWrapper";
 import BarMenu from "../../MenuBar";
 import { Input } from "@/components/ui/input";
 import { faCancel, faPencil } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
 
 const vendas = [
   {
@@ -73,6 +74,11 @@ const vendas = [
 ];
 
 export default function vendasUpdate() {
+  const navigater = useNavigate()
+  const editarVenda =() =>{
+    navigater("/CadastroVenda")
+  }
+  
   return (
     <GradientWrapper>
       <HeaderCadsatro label="VENDAS REALIZADAS" />
@@ -125,7 +131,7 @@ export default function vendasUpdate() {
                     {conta.situcao}
                   </label>
                   <label className="text-center" >
-                  <FontAwesomeIcon icon={faPencil} className="mr-5"/>
+                  <FontAwesomeIcon icon={faPencil} className="mr-5" onClick={editarVenda}/>
                   <FontAwesomeIcon icon={faCancel} color="red"/>
                   </label>
                 </div>

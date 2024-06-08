@@ -20,20 +20,23 @@ export default function Administracao() {
 
   const navigater = useNavigate()
 
-  const irContasReceber= () =>{
-    navigater("/ContasReceber")
+  const editarVenda= () =>{
+    navigater("/VendasUpdate")
   }
-  const irMaisVendidos=()=>{
-    navigater("/MaisVendidos")
+  const editarUsuario=()=>{
+    navigater("/UsuarioUpdate")
   }
-  const irPorEmpresa=()=>{
-    navigater("/MaisVendidosEmpresa")
+  const editarForncededor=()=>{
+    navigater("/fornecedorUpdate")
   }
-  const irEstoque = ()=>{
-    navigater("/MovimentacaoEstoque")
+  const editarProduto = ()=>{
+    navigater("/produtoUpdate")
   }
-  const irComissao=()=>{
-    navigater("/Comissoes")
+  const editarCliente=()=>{
+    navigater("/clienteUpdate")
+  }
+  const editarCategoria=()=>{
+    navigater("/editarCategoria")
   }
 
   return (
@@ -46,7 +49,7 @@ export default function Administracao() {
           <div className="bg-white p-2 flex items-center gap-x-6 rounded-lg w-[400px]">
             <FontAwesomeIcon icon={faSackDollar} className="h-[80px]" />
               <div className="flex justify-center w-full"  >
-                <label htmlFor="" className="font-bold font-sans text-lg"onClick={irContasReceber}>
+                <label htmlFor="" className="font-bold font-sans text-lg"onClick={editarVenda}>
                 VENDAS
               </label>
             </div>
@@ -55,7 +58,7 @@ export default function Administracao() {
           <div className="bg-white p-2 flex items-center gap-x-6 rounded-lg w-[400px]">
             <FontAwesomeIcon icon={faUserFriends} className="h-[80px]" />
             <div className="flex justify-center w-full">
-              <label htmlFor="" className="font-bold font-sans text-lg"onClick={irMaisVendidos}>
+              <label htmlFor="" className="font-bold font-sans text-lg"onClick={editarUsuario}>
                 USUARIOS
               </label>
             </div>
@@ -64,7 +67,7 @@ export default function Administracao() {
           <div className="bg-white p-2 flex items-center gap-x-6 rounded-lg w-[400px]">
             <FontAwesomeIcon icon={faBuilding} className="h-[80px]" />
             <div className="flex justify-center w-full">
-              <label htmlFor="" className="font-bold font-sans text-lg"onClick={irPorEmpresa}>
+              <label htmlFor="" className="font-bold font-sans text-lg"onClick={editarForncededor}>
                 FORNECEDORES
               </label>
             </div>
@@ -73,7 +76,7 @@ export default function Administracao() {
           <div className="bg-white p-2 flex items-center gap-x-6 rounded-lg w-[400px]">
             <FontAwesomeIcon icon={faBoxesStacked} className="h-[80px]" />
             <div className="flex justify-center w-full">
-              <label htmlFor="" className="font-bold font-sans text-lg"onClick={irEstoque}>
+              <label htmlFor="" className="font-bold font-sans text-lg"onClick={editarProduto}>
                 PRODUTOS
               </label>
             </div>
@@ -81,7 +84,7 @@ export default function Administracao() {
           <div className="bg-white p-2 flex items-center gap-x-6 rounded-lg w-[400px]">
             <FontAwesomeIcon icon={faUser} className="h-[80px]" />
             <div className="flex justify-center w-full">
-              <label htmlFor="" className="font-bold font-sans text-lg"onClick={irComissao}>
+              <label htmlFor="" className="font-bold font-sans text-lg"onClick={editarCliente}>
                 CLIENTES
               </label>
             </div>
@@ -89,7 +92,7 @@ export default function Administracao() {
           <div className="bg-white p-2 flex items-center gap-x-6 rounded-lg w-[400px]">
             <FontAwesomeIcon icon={faTags} className="h-[80px]" />
             <div className="flex justify-center w-full">
-              <label htmlFor="" className="font-bold font-sans text-lg"onClick={irComissao}>
+              <label htmlFor="" className="font-bold font-sans text-lg"onClick={editarCategoria}>
                 CATEGORIAS
               </label>
             </div>
