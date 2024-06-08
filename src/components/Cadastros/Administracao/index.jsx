@@ -14,85 +14,87 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faBuilding } from "@fortawesome/free-regular-svg-icons";
 
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Administracao() {
 
-  const navigater = useNavigate()
+  const navigate = useNavigate();
 
-  const editarVenda= () =>{
-    navigater("/VendasUpdate")
-  }
-  const editarUsuario=()=>{
-    navigater("/UsuarioUpdate")
-  }
-  const editarForncededor=()=>{
-    navigater("/fornecedorUpdate")
-  }
-  const editarProduto = ()=>{
-    navigater("/produtoUpdate")
-  }
-  const editarCliente=()=>{
-    navigater("/clienteUpdate")
-  }
-  const editarCategoria=()=>{
-    navigater("/editarCategoria")
-  }
+  const editarVenda = () => {
+    navigate("/VendasUpdate");
+  };
+  const editarUsuario = () => {
+    navigate("/UsuarioUpdate");
+  };
+  const editarFornecedor = () => {
+    navigate("/fornecedorUpdate");
+  };
+  const editarProduto = () => {
+    navigate("/produtoUpdate");
+  };
+  const editarCliente = () => {
+    navigate("/clienteUpdate");
+  };
+  const editarCategoria = () => {
+    navigate("/editarCategoria");
+  };
 
   return (
     <GradientWrapper>
       <HeaderCadsatro label="ADMINISTRAÇÃO" />
-      <div className="flex justify-center items-center h-[40rem] ">
+      <div className="flex justify-center items-center mt-6 sm:mt-12 lg:mt-20 xl:mt-24">
         {/* grid */}
-        <div className="grid grid-cols-2 grid-rows-2 gap-11">
-          {/* contas a receber */}
-          <div className="bg-white p-2 flex items-center gap-x-6 rounded-lg w-[400px]">
-            <FontAwesomeIcon icon={faSackDollar} className="h-[80px]" />
-              <div className="flex justify-center w-full"  >
-                <label htmlFor="" className="font-bold font-sans text-lg"onClick={editarVenda}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-2 gap-6 xl:gap-8">
+          {/* vendas */}
+          <div className="bg-white p-4 flex items-center gap-x-6 rounded-lg" onClick={editarVenda}>
+            <FontAwesomeIcon icon={faSackDollar} className="h-16 sm:h-20 lg:h-20" />
+            <div className="flex justify-center flex-1">
+              <label htmlFor="" className="font-bold font-sans text-lg sm:text-xl lg:text-2xl">
                 VENDAS
               </label>
             </div>
           </div>
-          {/* mais vendidos */}
-          <div className="bg-white p-2 flex items-center gap-x-6 rounded-lg w-[400px]">
-            <FontAwesomeIcon icon={faUserFriends} className="h-[80px]" />
-            <div className="flex justify-center w-full">
-              <label htmlFor="" className="font-bold font-sans text-lg"onClick={editarUsuario}>
-                USUARIOS
+          {/* usuarios */}
+          <div className="bg-white p-4 flex items-center gap-x-6 rounded-lg" onClick={editarUsuario}>
+            <FontAwesomeIcon icon={faUserFriends} className="h-16 sm:h-20 lg:h-20" />
+            <div className="flex justify-center flex-1">
+              <label htmlFor="" className="font-bold font-sans text-lg sm:text-xl lg:text-2xl">
+                USUÁRIOS
               </label>
             </div>
           </div>
-          {/* mais vendidos por empresa */}
-          <div className="bg-white p-2 flex items-center gap-x-6 rounded-lg w-[400px]">
-            <FontAwesomeIcon icon={faBuilding} className="h-[80px]" />
-            <div className="flex justify-center w-full">
-              <label htmlFor="" className="font-bold font-sans text-lg"onClick={editarForncededor}>
+          {/* fornecedores */}
+          <div className="bg-white p-4 flex items-center gap-x-6 rounded-lg" onClick={editarFornecedor}>
+            <FontAwesomeIcon icon={faBuilding} className="h-16 sm:h-20 lg:h-20" />
+            <div className="flex justify-center flex-1">
+              <label htmlFor="" className="font-bold font-sans text-lg sm:text-xl lg:text-2xl">
                 FORNECEDORES
               </label>
             </div>
           </div>
-          {/* movimentação de estoque */}
-          <div className="bg-white p-2 flex items-center gap-x-6 rounded-lg w-[400px]">
-            <FontAwesomeIcon icon={faBoxesStacked} className="h-[80px]" />
-            <div className="flex justify-center w-full">
-              <label htmlFor="" className="font-bold font-sans text-lg"onClick={editarProduto}>
+          {/* produtos */}
+          <div className="bg-white p-4 flex items-center gap-x-6 rounded-lg" onClick={editarProduto}>
+            <FontAwesomeIcon icon={faBoxesStacked} className="h-16 sm:h-20 lg:h-20" />
+            <div className="flex justify-center flex-1">
+              <label htmlFor="" className="font-bold font-sans text-lg sm:text-xl lg:text-2xl">
                 PRODUTOS
               </label>
             </div>
           </div>
-          <div className="bg-white p-2 flex items-center gap-x-6 rounded-lg w-[400px]">
-            <FontAwesomeIcon icon={faUser} className="h-[80px]" />
-            <div className="flex justify-center w-full">
-              <label htmlFor="" className="font-bold font-sans text-lg"onClick={editarCliente}>
+          {/* clientes */}
+          <div className="bg-white p-4 flex items-center gap-x-6 rounded-lg" onClick={editarCliente}>
+            <FontAwesomeIcon icon={faUser} className="h-16 sm:h-20 lg:h-20" />
+            <div className="flex justify-center flex-1">
+              <label htmlFor="" className="font-bold font-sans text-lg sm:text-xl lg:text-2xl">
                 CLIENTES
               </label>
             </div>
           </div>
-          <div className="bg-white p-2 flex items-center gap-x-6 rounded-lg w-[400px]">
-            <FontAwesomeIcon icon={faTags} className="h-[80px]" />
-            <div className="flex justify-center w-full">
-              <label htmlFor="" className="font-bold font-sans text-lg"onClick={editarCategoria}>
+          {/* categorias */}
+          <div className="bg-white p-4 flex items-center gap-x-6 rounded-lg" onClick={editarCategoria}>
+            <FontAwesomeIcon icon={faTags} className="h-16 sm:h-20 lg:h-20" />
+            <div className="flex justify-center flex-1">
+              <label htmlFor="" className="font-bold font-sans text-lg sm:text-xl lg:text-2xl">
                 CATEGORIAS
               </label>
             </div>

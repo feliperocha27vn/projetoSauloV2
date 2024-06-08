@@ -8,7 +8,6 @@ import { HomeIcon } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const cadastros = [
- 
   { rotulo: "Cadastro de Fornecedores", caminho: "/CadastroFornecedor" },
   { rotulo: "Cadastro de Usuário", caminho: "/CadastroUsuario" },
   { rotulo: "Cadastro de Clientes", caminho: "/CadastroClientes" },
@@ -16,26 +15,19 @@ const cadastros = [
   { rotulo: "Cadastro de Cidades", caminho: "/CadastroCidade" },
   { rotulo: "Cadastro de Produtos", caminho: "/CadastroProduto" },
   { rotulo: "Cadastro de Categorias", caminho: "/CadastroCategoria" },
-  //{ rotulo: "Cadastro de Telefones", caminho: "/CadastroTelefone" },
-  // { rotulo: "Contas", caminho: "/ContasReceber" },
-  // { rotulo: "Movimentação", caminho: "/MovimentacaoEstoque" },
   { rotulo: "Relatórios", caminho: "/Relatorios" },
-  {rotulo: "Administração", caminho: "/Administracao"}
-  // { rotulo: "Mais Vendidos", caminho: "/MaisVendidos" },
-  // { rotulo: "Mais Vendidos Por Empresa", caminho: "/MaisVendidosEmpresa" },
-  // { rotulo: "Movimentação de Estoque", caminho: "/MovimentacaoEstoque" },
+  { rotulo: "Administração", caminho: "/Administracao" },
 ];
 
 export default function BarMenu() {
   const navigate = useNavigate();
 
-  function sair(){
-
+  function sair() {
     navigate("/InicialPage");
   }
 
   return (
-    <div className="flex items-center justify-between absolute bottom-0 bg-black w-full h-16">
+    <div className="flex items-center justify-between fixed bottom-0 bg-black w-full h-16">
       <DropdownMenu>
         <DropdownMenuTrigger className="focus:outline-none">
           <div className="flex items-center space-x-2 ml-2">
@@ -49,9 +41,9 @@ export default function BarMenu() {
         </DropdownMenuTrigger>
         <DropdownMenuContent className="space-y-2 bg-black">
           {cadastros.map((item) => (
-            <DropdownMenuItem 
-              key={item.rotulo} 
-              className="font-bold text-white" 
+            <DropdownMenuItem
+              key={item.rotulo}
+              className="font-bold text-white"
               onClick={() => navigate(item.caminho)}
             >
               {item.rotulo}

@@ -1,20 +1,42 @@
 import GradientWrapper from "../../GradientWrapper";
 import BarMenu from "../../MenuBar";
 import HeaderCadsatro from "../HeaderCadastro";
+import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Autocomplete from "@mui/material/Autocomplete";
 import * as React from "react";
 
 const options = ["Option 1", "Option 2"];
 
 export default function CadastroUsuario() {
+  const [telefones, setTelefones] = useState(['']);
+
+  const adicionarTelefone = () => {
+    setTelefones([...telefones, '']);
+  };
+
+  const removerTelefone = (index) => {
+    const novosTelefones = [...telefones];
+    novosTelefones.splice(index, 1);
+    setTelefones(novosTelefones);
+  };
+
+  const handleAddPhone = () => {
+    adicionarTelefone();
+  };
+
+  const handleRemovePhone = (index) => {
+    removerTelefone(index);
+  };
+
   return (
     <GradientWrapper>
       <HeaderCadsatro label="USUÁRIO" />
-      <div className="flex justify-center items-center mt-3  ">
-        {/* Formulario */}
-        <form action="" className="flex flex-col gap-4 w-96">
+      <div className="flex justify-center items-center mt-3">
+        <form action="" className="flex flex-col gap-4 w-full md:w-96">
           <div className="grid w-full max-w-sm items-center gap-1.5">
             <Label htmlFor="nome" className="text-white font-bold">
               NOME:
@@ -35,17 +57,34 @@ export default function CadastroUsuario() {
               placeholder="Cadastre uma senha"
             />
           </div>
-          <div className="grid w-full max-w-sm items-center gap-1.5">
-            <Label htmlFor="telefone" className="text-white font-bold">
-              TELEFONE:
-            </Label>
-            <Input
-              type="number"
-              id="telefone_usuario"
-              placeholder="Adicione um telefone"
-            />
-          </div>
-          {/* Valor da comissao */}
+          {telefones.map((telefone, index) => (
+            <div key={index} className="grid w-full max-w-sm items-center gap-1.5">
+              <Label htmlFor={`telefone${index + 1}`} className="text-white font-bold">
+                TELEFONE {index + 1}:
+              </Label>
+              
+              <div className="flex items-center">
+                <Input
+                  type="number"
+                  id={`telefone${index + 1}_usuario`}
+                  placeholder={`Adicione o telefone ${index + 1}`}
+                />
+                <FontAwesomeIcon
+                  icon={faPlus}
+                  className="ml-2 text-white cursor-pointer"
+                  onClick={handleAddPhone}
+                />
+                {index > 0 && (
+                  <FontAwesomeIcon
+                    icon={faMinus}
+                    className="ml-2 text-white cursor-pointer"
+                    onClick={() => handleRemovePhone(index)}
+                  />
+                )}
+              </div>
+            </div>
+          ))}
+          <div className="grid w-full max-w-sm items-center gap-1.5"></div>
           <div className="grid w-full max-w-sm items-center gap-1.5">
             <Label htmlFor="nome" className="text-white font-bold">
               COMISSÃO:
@@ -56,8 +95,7 @@ export default function CadastroUsuario() {
               placeholder="Escreva o valor da comissão... EX: (10%)"
             />
           </div>
-          {/* Autocomplete da empresa */}
-          <div> 
+          <div>
             <label className="text-white font-bold">
               EMPRESA:{" "}
               <Autocomplete
@@ -83,7 +121,6 @@ export default function CadastroUsuario() {
               />
             </label>
           </div>
-          {/* botao */}
           <div className="flex justify-center">
             <button className="text-white bg-black font-bold w-[200px] h-[40px] rounded-xl">
               Cadastrar

@@ -20,16 +20,17 @@ export default function MovimentacaoEstoque() {
     <GradientWrapper>
       <HeaderCadsatro label="MOVIMENTAÇÃO ESTOQUE" />
       <div className="flex justify-center items-center mt-4">
-        <div className="w-11/12 h-[30rem] rounded-3xl bg-[#053057] flex flex-col items-center">
-          <div className="p-4 flex items-center gap-x-4">
+        <div className="w-full lg:w-3/4 xl:w-2/3 rounded-3xl bg-[#053057] flex flex-col items-center">
+          {/* inputs */}
+          <div className="p-4 flex flex-col sm:flex-row items-center gap-x-4 w-full">
             <label htmlFor="" className="text-sm font-bold text-white">
               INSIRA A DATA INICIAL
             </label>
             <Input
               type="date"
-              id="quantidade_produto"
-              placeholder=""
-              className="flex h-10 w-60 rounded-md border border-neutral-200
+              id="data_inicial"
+              placeholder="INSIRA A DATA INICIAL"
+              className="h-10 w-full sm:w-auto rounded-md border border-neutral-200
               bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent 
               file:text-sm file:font-medium placeholder:text-neutral-500 
               focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-950 
@@ -37,17 +38,15 @@ export default function MovimentacaoEstoque() {
                dark:border-neutral-800 dark:bg-neutral-950 dark:ring-offset-neutral-950
                 dark:placeholder:text-neutral-400 dark:focus-visible:ring-neutral-300
                 text-black mt-1 font-normal"
-              inputmode="numeric"
-              pattern="\d*"
             />
             <label htmlFor="" className="text-sm font-bold text-white">
               INSIRA A DATA FINAL
             </label>
             <Input
               type="date"
-              id="quantidade_produto"
-              placeholder=""
-              className="flex h-10 w-60 rounded-md border border-neutral-200
+              id="data_final"
+              placeholder="INSIRA A DATA FINAL"
+              className="h-10 w-full sm:w-auto rounded-md border border-neutral-200
               bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent 
               file:text-sm file:font-medium placeholder:text-neutral-500 
               focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-950 
@@ -55,18 +54,16 @@ export default function MovimentacaoEstoque() {
                dark:border-neutral-800 dark:bg-neutral-950 dark:ring-offset-neutral-950
                 dark:placeholder:text-neutral-400 dark:focus-visible:ring-neutral-300
                 text-black mt-1 font-normal"
-              inputmode="numeric"
-              pattern="\d*"
             />
             <Autocomplete
               id="descricao_produto"
               options={options}
               renderInput={(params) => (
-                <div ref={params.InputProps.ref}>
+                <div ref={params.InputProps.ref} className="w-full">
                   <input
                     type="text"
                     {...params.inputProps}
-                    className="flex h-10 w-60 rounded-md border border-neutral-200
+                    className="h-10 w-full rounded-md border border-neutral-200
                       bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent 
                       file:text-sm file:font-medium placeholder:text-neutral-500 
                       focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-950 
@@ -79,13 +76,12 @@ export default function MovimentacaoEstoque() {
                 </div>
               )}
             />
-            <button className="h-10 w-36 bg-black rounded-xl border border-black px-3 py-2 text-xs flex justify-center items-center mt-1">
-              <label htmlFor="" className="text-white">
-                BUSCAR
-              </label>
+            <button className="h-10 w-full sm:w-auto bg-black rounded-xl border border-black px-3 py-2 text-xs flex justify-center items-center mt-1 text-white">
+              BUSCAR
             </button>
           </div>
-          <div className="w-11/12 border-2 border-black bg-white rounded-xl">
+          {/* tabela */}
+          <div className="w-full border-2 border-black bg-white rounded-xl mt-4 overflow-hidden">
             <div className="grid grid-cols-4 p-2 border-b-2 border-black">
               <label htmlFor="" className="font-semibold">
                 DESCRIÇÃO DO PRODUTO
@@ -101,10 +97,10 @@ export default function MovimentacaoEstoque() {
               </label>
             </div>
             {/* list */}
-            <div className="h-[300px] overflow-y-auto">
-              {movimentosEstoque.map((movimentoEstoque) => (
+            <div className="h-[300px] lg:h-[200px] overflow-y-auto">
+              {movimentosEstoque.map((movimentoEstoque, index) => (
                 <div
-                  key={movimentoEstoque.id}
+                  key={index}
                   className="grid grid-cols-4 p-2 border-b-2 border-black"
                 >
                   <label htmlFor="" className="">
@@ -123,7 +119,7 @@ export default function MovimentacaoEstoque() {
               ))}
             </div>
           </div>
-          <button className="p-2 text-white bg-black w-[150px] m-2 rounded-xl font-semibold">
+          <button className="p-2 text-white bg-black w-full sm:w-[150px] lg:w-[200px] m-2 rounded-xl font-semibold">
             IMPRIMIR
           </button>
         </div>
