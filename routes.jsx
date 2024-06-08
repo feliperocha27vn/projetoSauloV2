@@ -17,7 +17,8 @@ import MaisVendidosEmpresa from "./src/components/Relatorios/MaisVendidosEmpresa
 import MovimentacaoEstoque from "./src/components/Relatorios/MovimentacaoEstoque";
 import Relatorio from "./src/components/Relatorios/Relatorio";
 import Comissoes from "./src/components/Relatorios/Comissoes";
-
+import Administracao from "./src/components/Cadastros/Administracao";
+import VendasUpdate from "./src/components/Updates/VendasUpdate";
 function RouteApp() {
   return (
     <BrowserRouter>
@@ -39,7 +40,9 @@ function RouteApp() {
         <Route path="/MovimentacaoEstoque" element={<MovimentacaoEstoque />} />
         <Route path="/Relatorios" element={<Relatorio />} />
         <Route path="/Comissoes" element={<Comissoes />} />
-      </Routes>
+        <Route path="/Administracao" element={<Administracao/>}/>
+        <Route path="/VendasUpdate" element={<VendasUpdate/>}/>
+              </Routes>
     </BrowserRouter>
   );
 }

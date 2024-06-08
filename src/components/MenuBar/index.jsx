@@ -20,6 +20,7 @@ const cadastros = [
   // { rotulo: "Contas", caminho: "/ContasReceber" },
   // { rotulo: "Movimentação", caminho: "/MovimentacaoEstoque" },
   { rotulo: "Relatórios", caminho: "/Relatorios" },
+  {rotulo: "Administração", caminho: "/Administracao"}
   // { rotulo: "Mais Vendidos", caminho: "/MaisVendidos" },
   // { rotulo: "Mais Vendidos Por Empresa", caminho: "/MaisVendidosEmpresa" },
   // { rotulo: "Movimentação de Estoque", caminho: "/MovimentacaoEstoque" },

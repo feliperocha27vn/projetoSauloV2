@@ -3,6 +3,8 @@ import BarMenu from "../../MenuBar";
 import HeaderCadsatro from "../HeaderCadastro";
 import Autocomplete from "@mui/material/Autocomplete";
 import { Input } from "@/components/ui/input";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const options = ["Option 1", "Option 2"];
 const formaPagamento = ["Crédito", "Débito"];
@@ -48,10 +50,10 @@ export default function CadastroVenda() {
             )}
           />
           {/* valor produto */}
-        {/*  <Input
+          <Input
             type="number"
-            id="valor_produto"
-            placeholder="VALOR DO PRODUTO"
+            id="quantidade_produto"
+            placeholder="QUANTIDADE DO PRODUTO"
             className="flex h-10 w-72 rounded-md border border-neutral-200
               bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent 
               file:text-sm file:font-medium placeholder:text-neutral-500 
@@ -62,7 +64,7 @@ export default function CadastroVenda() {
                 text-black mt-1 font-normal"
             inputmode="numeric"
             pattern="\d*"
-          />*/}
+          />
           {/* botão para adicionar venda */}
           <button className="h-10 w-36 bg-black rounded-xl border border-black px-3 py-2 text-xs flex items-center mt-1">
             <label htmlFor="" className="text-white">
@@ -74,7 +76,7 @@ export default function CadastroVenda() {
         <div className="w-[1024px] h-[640px] bg-[#053057] rounded-lg flex flex-col items-center">
           <div className="w-11/12 border-2 border-black bg-white rounded-xl mt-4">
             {/* grid listagem produtos */}
-            <div className="grid grid-cols-3 p-2 border-b-2 border-black">
+            <div className="grid grid-cols-4 p-2 border-b-2 border-black">
               {/* descrições */}
               <label htmlFor="" className="font-semibold">
                 DESCRIÇÃO PRODUTO
@@ -82,16 +84,20 @@ export default function CadastroVenda() {
               <label htmlFor="" className="font-semibold text-center">
                 VALOR
               </label>
-              <label htmlFor="" className="font-semibold text-right">
+              <label htmlFor="" className="font-semibold text-center">
                 QUANTIDADE
               </label>
+              <label htmlFor="" className="font-semibold text-center">
+                  EXCLUIR ITEM
+              </label>
+              
             </div>
             {/* list */}
             <div className="h-[300px] overflow-y-auto">
               {cadastroVendas.map((cadastroVenda) => (
                 <div
                   key={cadastroVenda.id}
-                  className="grid grid-cols-3 p-2 border-b-2 border-black"
+                  className="grid grid-cols-4 p-2 border-b-2 border-black"
                 >
                   <label htmlFor="" className="">
                     {cadastroVenda.descricaoProd}
@@ -99,8 +105,12 @@ export default function CadastroVenda() {
                   <label htmlFor="" className="text-center">
                     R$ {cadastroVenda.valor}
                   </label>
-                  <label htmlFor="" className="text-right">
+                  <label htmlFor="" className="text-center">
                     {cadastroVenda.quantidade} UN
+                  </label>
+                  <label htmlFor="" className="text-center">
+                  <FontAwesomeIcon icon={faTrash} color="red"/>
+
                   </label>
                 </div>
               ))}
