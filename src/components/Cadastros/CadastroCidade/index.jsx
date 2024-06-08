@@ -36,7 +36,7 @@ export default function CadastroCidade() {
           </div>
           <div className="flex justify-center">
             <button className="text-white bg-black font-bold w-[200px] h-[40px] rounded-xl" onClick={cidade}>
-              Cadastrar
+            Confirmar
             </button>
           </div>
           {message && (

@@ -36,7 +36,7 @@ export default function Administracao() {
     navigate("/clienteUpdate");
   };
   const editarCategoria = () => {
-    navigate("/editarCategoria");
+    navigate("/CategoriaUpdate");
   };
 
   return (

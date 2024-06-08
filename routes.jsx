@@ -20,6 +20,12 @@ import Comissoes from "./src/components/Relatorios/Comissoes";
 import Administracao from "./src/components/Cadastros/Administracao";
 import VendasUpdate from "./src/components/Updates/VendasUpdate";
 import UsuarioUpdate from "./src/components/Updates/UsuarioUpdate";
+import FornecedorUpdate from "./src/components/Updates/FornecedorUpdate";
+import ProdutoUpdate from "./src/components/Updates/ProdutoUpdate";
+import ClienteUpdate from "./src/components/Updates/ClienteUpdate";
+import CategoriaUpdate from "./src/components/Updates/CategoriaUpdate";
+
+
 
 function RouteApp() {
   return (
@@ -42,10 +48,14 @@ function RouteApp() {
         <Route path="/MovimentacaoEstoque" element={<MovimentacaoEstoque />} />
         <Route path="/Relatorios" element={<Relatorio />} />
         <Route path="/Comissoes" element={<Comissoes />} />
-        <Route path="/Administracao" element={<Administracao/>}/>
-        <Route path="/VendasUpdate" element={<VendasUpdate/>}/>
-        <Route path="/UsuarioUpdate" element={<UsuarioUpdate/>}/>
-              </Routes>
+        <Route path="/Administracao" element={<Administracao />} />
+        <Route path="/VendasUpdate" element={<VendasUpdate />} />
+        <Route path="/UsuarioUpdate" element={<UsuarioUpdate />} />
+        <Route path="/FornecedorUpdate" element={<FornecedorUpdate />} />
+        <Route path="/ProdutoUpdate" element={<ProdutoUpdate />} />
+        <Route path="/ClienteUpdate" element={<ClienteUpdate />} />
+        <Route path="/CategoriaUpdate" element={<CategoriaUpdate/>}/>
+      </Routes>
     </BrowserRouter>
   );
 }

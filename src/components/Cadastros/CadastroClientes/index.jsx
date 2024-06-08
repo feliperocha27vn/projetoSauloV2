@@ -3,6 +3,8 @@ import BarMenu from "../../MenuBar";
 import HeaderCadsatro from "../HeaderCadastro";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Autocomplete from "@mui/material/Autocomplete";
 import * as React from "react";
 import { useState } from "react";
@@ -15,6 +17,25 @@ export default function cadastroCliente() {
   const cliente = () => {
     setMessage('CLIENTE CADASTRADO');
   }
+  const [telefones, setTelefones] = useState(['']);
+
+  const adicionarTelefone = () => {
+    setTelefones([...telefones, '']);
+  };
+
+  const removerTelefone = (index) => {
+    const novosTelefones = [...telefones];
+    novosTelefones.splice(index, 1);
+    setTelefones(novosTelefones);
+  };
+
+  const handleAddPhone = () => {
+    adicionarTelefone();
+  };
+
+  const handleRemovePhone = (index) => {
+    removerTelefone(index);
+  };
   return (
     <GradientWrapper>
       <HeaderCadsatro label="CLIENTES" />
@@ -41,6 +62,33 @@ export default function cadastroCliente() {
               placeholder="Informe o endereço do cliente"
             />
           </div>
+          {telefones.map((telefone, index) => (
+            <div key={index} className="grid w-full max-w-sm items-center gap-1.5">
+              <Label htmlFor={`telefone${index + 1}`} className="text-white font-bold">
+                TELEFONE {index + 1}:
+              </Label>
+              
+              <div className="flex items-center">
+                <Input
+                  type="number"
+                  id={`telefone${index + 1}_usuario`}
+                  placeholder={`Adicione o telefone ${index + 1}`}
+                />
+                <FontAwesomeIcon
+                  icon={faPlus}
+                  className="ml-2 text-white cursor-pointer"
+                  onClick={handleAddPhone}
+                />
+                {index > 0 && (
+                  <FontAwesomeIcon
+                    icon={faMinus}
+                    className="ml-2 text-white cursor-pointer"
+                    onClick={() => handleRemovePhone(index)}
+                  />
+                )}
+              </div>
+            </div>
+          ))}
           <div className="grid w-full max-w-sm items-center gap-1.5">
             <Label htmlFor="nome" className="text-white font-bold">
               CIDADE:
@@ -69,7 +117,7 @@ export default function cadastroCliente() {
           {/* botao */}
           <div className="flex justify-center">
             <button className="text-white bg-black font-bold w-[200px] h-[40px] rounded-xl" onClick={cliente}>
-              Cadastrar
+            Confirmar
             </button>
           </div>
           {message && (

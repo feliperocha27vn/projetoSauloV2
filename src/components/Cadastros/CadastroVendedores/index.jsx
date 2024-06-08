@@ -17,25 +17,7 @@ export default function CadastroUsuario() {
   const usuario = () => {
     setMessage('USUARIO CADASTRADO');
   }
-  const [telefones, setTelefones] = useState(['']);
 
-  const adicionarTelefone = () => {
-    setTelefones([...telefones, '']);
-  };
-
-  const removerTelefone = (index) => {
-    const novosTelefones = [...telefones];
-    novosTelefones.splice(index, 1);
-    setTelefones(novosTelefones);
-  };
-
-  const handleAddPhone = () => {
-    adicionarTelefone();
-  };
-
-  const handleRemovePhone = (index) => {
-    removerTelefone(index);
-  };
 
   return (
     <GradientWrapper>
@@ -62,33 +44,7 @@ export default function CadastroUsuario() {
               placeholder="Cadastre uma senha"
             />
           </div>
-          {telefones.map((telefone, index) => (
-            <div key={index} className="grid w-full max-w-sm items-center gap-1.5">
-              <Label htmlFor={`telefone${index + 1}`} className="text-white font-bold">
-                TELEFONE {index + 1}:
-              </Label>
-              
-              <div className="flex items-center">
-                <Input
-                  type="number"
-                  id={`telefone${index + 1}_usuario`}
-                  placeholder={`Adicione o telefone ${index + 1}`}
-                />
-                <FontAwesomeIcon
-                  icon={faPlus}
-                  className="ml-2 text-white cursor-pointer"
-                  onClick={handleAddPhone}
-                />
-                {index > 0 && (
-                  <FontAwesomeIcon
-                    icon={faMinus}
-                    className="ml-2 text-white cursor-pointer"
-                    onClick={() => handleRemovePhone(index)}
-                  />
-                )}
-              </div>
-            </div>
-          ))}
+
           <div className="grid w-full max-w-sm items-center gap-1.5"></div>
           <div className="grid w-full max-w-sm items-center gap-1.5">
             <Label htmlFor="nome" className="text-white font-bold">
@@ -128,7 +84,7 @@ export default function CadastroUsuario() {
           </div>
           <div className="flex justify-center">
             <button className="text-white bg-black font-bold w-[200px] h-[40px] rounded-xl" onClick={usuario}>
-              Cadastrar
+              Confirmar
             </button>
           </div>
           {message && (

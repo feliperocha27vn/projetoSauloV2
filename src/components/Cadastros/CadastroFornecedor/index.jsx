@@ -56,7 +56,7 @@ export default function CadastroFornecedor() {
           {/* botao */}
           <div className="flex justify-center">
             <button className="text-white bg-black font-bold w-full max-w-xs h-10 rounded-xl" onClick={cadastraFornecedor}>
-              Cadastrar
+            Confirmar
             </button>
           </div>
           {message && (

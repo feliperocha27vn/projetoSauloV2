@@ -6,37 +6,37 @@ import { Input } from "@/components/ui/input";
 import { faCancel, faPencil } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 
-const usuarios = [
+const fornecedores = [
   {
-    idUsuario: 1234,
-    nomeUsuario: "Romilson",
-    papel: "PESSOA FÍSICA",
+    idFornecedor: 1234,
+    nomeFornecedor: "Papelaria KHNJ",
+    cidade: "Birigui",
   },
   // Outras entradas aqui...
 ];
 
-export default function UsuarioUpdate() {
+export default function FornecedorUpdate() {
   const navigate = useNavigate();
-  const editarUsuario = () => {
-    navigate("/CadastroUsuario");
+  const editarVenda = () => {
+    navigate("/CadastroFornecedor");
   };
 
   return (
     <GradientWrapper>
-      <HeaderCadsatro label="USUÁRIOS CADASTRADOS" />
+      <HeaderCadsatro label="FORNECEDORES CADASTRADOS" />
       <div className="flex justify-center items-center mt-4 px-4">
         <div className="w-full max-w-5xl h-[30rem] rounded-3xl bg-[#053057] flex flex-col items-center">
           <div className="w-full border-2 border-black bg-white rounded-xl mt-6">
             {/* descrições */}
             <div className="grid grid-cols-4 p-2 border-b-2 border-black text-xs sm:text-sm md:text-base">
               <label htmlFor="" className="font-semibold">
-                ID USUARIO
+                ID FORNECEDOR
               </label>
               <label htmlFor="" className="font-semibold text-center">
-                NOME USUARIO
+                NOME FORNECEDOR
               </label>
               <label htmlFor="" className="font-semibold text-center">
-                PAPEL DO USUARIO
+                CIDADE
               </label>
               <label htmlFor="" className="font-semibold text-center">
                 AÇÕES
@@ -44,20 +44,20 @@ export default function UsuarioUpdate() {
             </div>
             {/* list */}
             <div className="h-[300px] overflow-y-auto">
-              {usuarios.map((conta) => (
+              {fornecedores.map((conta) => (
                 <div
-                  key={conta.idUsuario}
+                  key={conta.idFornecedor}
                   className="grid grid-cols-4 p-2 border-b-2 border-black text-xs sm:text-sm md:text-base"
                 >
-                  <label htmlFor="">{conta.idUsuario}</label>
+                  <label htmlFor="">{conta.idFornecedor}</label>
                   <label htmlFor="" className="text-center">
-                    {conta.nomeUsuario}
+                    {conta.nomeFornecedor}
                   </label>
                   <label htmlFor="" className="text-center">
-                    {conta.papel}
+                    {conta.cidade}
                   </label>
                   <label className="text-center">
-                    <FontAwesomeIcon icon={faPencil} className="mr-5 cursor-pointer" onClick={editarUsuario} />
+                    <FontAwesomeIcon icon={faPencil} className="mr-5 cursor-pointer" onClick={editarVenda} />
                     <FontAwesomeIcon icon={faCancel} color="red" className="cursor-pointer" />
                   </label>
                 </div>
