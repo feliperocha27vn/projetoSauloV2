@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 
 const cadastros = [
   { rotulo: "Cadastro de Fornecedores", caminho: "/CadastroFornecedor" },
+  {rotulo: "Cadastro de empresa", caminho: "/CadastroEmpresa"},
   { rotulo: "Cadastro de Usuário", caminho: "/CadastroUsuario" },
   { rotulo: "Cadastro de Clientes", caminho: "/CadastroClientes" },
   { rotulo: "Vendas", caminho: "/CadastroVenda" },
@@ -18,6 +19,7 @@ const cadastros = [
   { rotulo: "Cadastro de Categorias", caminho: "/CadastroCategoria" },
   { rotulo: "Relatórios", caminho: "/Relatorios" },
   { rotulo: "Administração", caminho: "/Administracao" },
+ 
 ];
 
 export default function BarMenu() {

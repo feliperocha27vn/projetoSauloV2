@@ -5,6 +5,7 @@ import BarMenu from "../../MenuBar";
 import {
   faBoxesStacked,
   faHandHoldingDollar,
+  faIndustry,
   faPercent,
   faSackDollar,
   faTags,
@@ -37,6 +38,9 @@ export default function Administracao() {
   };
   const editarCategoria = () => {
     navigate("/CategoriaUpdate");
+  };
+  const editarEmpresa = () => {
+    navigate("/EmpresaUpdate");
   };
 
   return (
@@ -96,6 +100,15 @@ export default function Administracao() {
             <div className="flex justify-center flex-1">
               <label htmlFor="" className="font-bold font-sans text-lg sm:text-xl lg:text-2xl">
                 CATEGORIAS
+              </label>
+            </div>
+          </div>
+          {/* empresas */}
+          <div className="bg-white p-4 flex items-center gap-x-6 rounded-lg" onClick={editarEmpresa}>
+            <FontAwesomeIcon icon={faIndustry} className="h-16 sm:h-20 lg:h-20" />
+            <div className="flex justify-center flex-1">
+              <label htmlFor="" className="font-bold font-sans text-lg sm:text-xl lg:text-2xl">
+                EMPRESAS
               </label>
             </div>
           </div>
